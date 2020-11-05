@@ -33,11 +33,11 @@ ul {
 			@include transition;
 
 			&.secret {
-				border-bottom: 1px solid lighten($black, 80);
+				border-bottom: 2px solid lighten($black, 80);
 			}
 
 			&.correct {
-				border-bottom: 3px solid $success;
+				border-bottom: 4px solid $success;
 			}
 		}
 
@@ -50,7 +50,7 @@ ul {
 		}
 		&.lose {
 			li {
-				border-bottom: 3px solid $danger;
+				border-bottom: 6px solid $danger;
 			}
 		}
 	}
