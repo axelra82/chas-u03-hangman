@@ -10,9 +10,27 @@
 </head>
 
 <body>
-	<section class="container">
-		<h1>Let's play a game!</h1>
-		<h2>You have <span class="guesses-left"></span> <span class="sing-plur">rounds</span> left in the chamber</h2>
+	<section id="intro" class="container">
+		<h1>
+			Let's play a game!
+		</h1>
+		<h2>Choose your level</h2>
+		<ul id="difficulty">
+			<li>
+				<button value="easy">Beginner</button>
+			</li>
+			<li>
+				<button value="medium">Intermediate</button>
+			</li>
+			<li>
+				<button value="hard">Master</button>
+			</li>
+		</ul>
+	</section>
+	<section id="game" class="hide container">
+		<h2>
+			You have <span class="guesses-left"></span> <span class="sing-plur">rounds</span> left in the chamber
+		</h2>
 		<ul id="secretWord" class="mb-2"></ul>
 		<ul id="letterButtons"></ul>
 	</section>
