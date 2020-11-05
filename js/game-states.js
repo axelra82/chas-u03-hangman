@@ -7,7 +7,7 @@ const gameOver = () => {
 // Are you a prodigy or did you just cheat?
 const playerWins = () => {
 	disableButtons();
-	changeLayout('YOU DID IT!', 'success');
+	changeLayout('YOU DID IT!', 'win');
 }
 
 const changeLayout = (header, listClass) => {
