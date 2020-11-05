@@ -8,20 +8,8 @@ const verify = (button, letter) => {
 	// Check if clicked letter exists in word letter array
 	if (lettersArray.includes(letter)) {
 
-		const placeHolderItems = letterPlaceholders.querySelectorAll('li');
-		lettersArray.forEach((l, i) => {
-			if (l === letter) {
-				// YEAY!
-				// Increase correct count by one (1)
-				correctCount++;
-
-				// Some DOM manipulation
-				const placeHolderItem = placeHolderItems[i];
-				placeHolderItem.classList.remove('secret')
-				placeHolderItem.classList.add('correct')
-				placeHolderItem.innerHTML = letter;
-			}
-		});
+		// Change placeholder(s) to correct letter(s)
+		placeholderToLetter(letter);
 
 		if (correctCount === lettersArray.length) {
 			playerWins();
@@ -44,4 +32,25 @@ const verify = (button, letter) => {
 
 	// At this point we can correct remining guess(es)
 	guessesCountEl.innerHTML = maxClick - wrongCount;
+
+	return;
+}
+
+const placeholderToLetter = (letter) => {
+	const placeHolderItems = letterPlaceholders.querySelectorAll('li');
+	lettersArray.forEach((l, i) => {
+		if (l === letter) {
+			// YEAY!
+			// Increase correct count by one (1)
+			correctCount++;
+
+			// Some DOM manipulation
+			const placeHolderItem = placeHolderItems[i];
+			placeHolderItem.classList.remove('secret')
+			placeHolderItem.classList.add('correct')
+			placeHolderItem.innerHTML = letter;
+		}
+	});
+
+	return;
 }
