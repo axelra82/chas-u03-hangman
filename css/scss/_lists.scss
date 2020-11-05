@@ -2,6 +2,40 @@ ul {
 	list-style-type: none;
 	list-style: none;
 
-	li {
+	&#secretWord,
+	&#letters {
+		display: flex;
+		flex-wrap: wrap;
+		li,
+		li button {
+			text-transform: uppercase;
+		}
+	}
+
+	&#secretWord {
+		justify-content: space-between;
+		li {
+			padding: 1rem;
+			font-size: 2.5rem;
+			@include transition;
+
+			&.secret {
+				border-bottom: 2px solid lighten($black, 50);
+			}
+
+			&.correct {
+				border-bottom: 3px solid $success;
+			}
+		}
+	}
+
+	&#letters {
+		justify-content: center;
+
+		li {
+			button {
+				font-size: 2rem;
+			}
+		}
 	}
 }

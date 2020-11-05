@@ -1,0 +1,43 @@
+// General
+$one: #111111;
+$two: #222222;
+$three: #333333;
+$four: #444444;
+$five: #555555;
+$six: #666666;
+$seven: #777777;
+$eight: #888888;
+$nine: #999999;
+
+$ca: #aaaaaa;
+$cb: #bbbbbb;
+$cc: #cccccc;
+$cd: #dddddd;
+$ce: #eeeeee;
+
+$black: #000000;
+$white: #ffffff;
+$smoke: #f5f5f5;
+
+// Indicators
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+
+// Classes
+.text-black {
+	color: $black !important;
+
+	a {
+		color: $black !important;
+	}
+}
+
+.text-white {
+	color: $white !important;
+
+	a {
+		color: $white !important;
+	}
+}

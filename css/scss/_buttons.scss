@@ -1,4 +1,29 @@
 button {
-	padding: 1rem;
+	padding: 1rem 0;
+	width: 3.75rem;
+	text-align: center;
 	margin: 0 0.5rem 0.5rem 0.5rem;
+	background: $smoke;
+	color: darken($smoke, 50);
+	border: 1px solid lighten($black, 60);
+	border-radius: 0.15rem;
+	transform: scale(1);
+	@include transition;
+
+	&:not([disabled]) {
+		cursor: pointer;
+
+		&:hover {
+			background: rgba($smoke, 0.75);
+			border-color: lighten($black, 90);
+			color: $black;
+			transform: scale(1.05);
+		}
+	}
+
+	&:disabled {
+		background: rgba($smoke, 0.85);
+		border-color: lighten($black, 90);
+		color: darken($smoke, 10);
+	}
 }

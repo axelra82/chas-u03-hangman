@@ -10,20 +10,6 @@ body {
 	margin: 0 auto;
 }
 
-ul#secretWord,
-ul#letters {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-ul#secretWord {
-	justify-content: space-between;
-}
-
-ul#letters {
-	justify-content: center;
-}
-
 @include media-lg {
 	.container {
 		width: 920px;
