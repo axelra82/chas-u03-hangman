@@ -24,7 +24,7 @@ const verify = (button, letter) => {
 		});
 
 		if (correctCount === lettersArray.length) {
-			youWin();
+			playerWins();
 		}
 
 		console.log(`Keep going! You have ${maxClick - wrongCount} chances left`);

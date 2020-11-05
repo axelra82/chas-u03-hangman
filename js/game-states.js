@@ -5,9 +5,12 @@ const gameOver = () => {
 }
 
 // Are you a prodigy or did you just cheat?
-const youWin = () => {
-	gameEl.innerHTML = '<h1>YOU WIN!</h1>';
+const playerWins = () => {
 	disableButtons();
+	const gameHeader = gameEl.querySelector('h2');
+	gameHeader.classList.add('text-center');
+	gameHeader.innerHTML = 'YOU DID IT!';
+	letterPlaceholders.classList.add('success');
 }
 
 // No more buttons for you!

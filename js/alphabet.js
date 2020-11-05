@@ -2,7 +2,7 @@
 const alphabet = 'abcdefghijklmnopqrstuvwxyzåäö'.split('');
 
 // Get alphabet UL element from document
-const alphabetList = document.querySelector('#letterButtons');
+const alphabetList = document.querySelector('ul#letterButtons');
 
 // Create a button in a list item for
 // each letter in alphabet
