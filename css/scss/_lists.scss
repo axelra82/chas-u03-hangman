@@ -24,6 +24,8 @@ ul {
 
 	&#secretWord {
 		justify-content: space-between;
+		@include transition;
+
 		li {
 			padding: 1rem 1rem 0 1rem;
 			font-size: 2.5rem;
@@ -36,6 +38,13 @@ ul {
 
 			&.correct {
 				border-bottom: 3px solid $success;
+			}
+		}
+
+		&.success {
+			justify-content: center;
+			li {
+				padding: 0;
 			}
 		}
 	}
