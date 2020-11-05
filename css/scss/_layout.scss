@@ -10,6 +10,16 @@ body {
 	margin: 0 auto;
 }
 
+#intro {
+	text-align: center;
+}
+
+#game {
+	&.hide {
+		display: none;
+	}
+}
+
 @include media-lg {
 	.container {
 		width: 920px;

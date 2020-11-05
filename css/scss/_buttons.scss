@@ -1,6 +1,5 @@
 button {
 	padding: 0.5rem 0;
-	width: 3.75rem;
 	text-align: center;
 	margin: 0 0.5rem 0.5rem 0.5rem;
 	background: $smoke;
@@ -20,10 +19,25 @@ button {
 			transform: scale(1.075);
 		}
 	}
+}
 
-	&:disabled {
-		background: rgba($smoke, 0.85);
-		border-color: lighten($black, 90);
-		color: darken($smoke, 10);
+#difficulty {
+	button {
+		font-size: 1.35rem;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		border-width: 3px;
+	}
+}
+
+#letterButtons {
+	button {
+		width: 3.75rem;
+
+		&:disabled {
+			background: rgba($smoke, 0.85);
+			border-color: lighten($black, 90);
+			color: darken($smoke, 10);
+		}
 	}
 }

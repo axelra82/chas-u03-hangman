@@ -12,6 +12,16 @@ ul {
 		}
 	}
 
+	&#difficulty {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+
+		li {
+			@extend .mt-2;
+		}
+	}
+
 	&#secretWord {
 		justify-content: space-between;
 		li {
