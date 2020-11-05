@@ -19,6 +19,16 @@ button {
 			transform: scale(1.075);
 		}
 	}
+
+	&.replay {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		padding: 0.375rem 2.25rem;
+		border-width: 3px;
+		background: none;
+		border-color: $success;
+		color: $success;
+	}
 }
 
 #difficulty {
