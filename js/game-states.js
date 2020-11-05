@@ -24,11 +24,16 @@ const changeLayout = (header, message, listClass) => {
 	gameParagraph.classList.add('text-center');
 	gameParagraph.innerHTML = message;
 
+	const buttonContainerEl = document.createElement('div');
 	const replayButtonEl = document.createElement('button');
+	replayButtonEl.classList.add('replay');
 	replayButtonEl.innerHTML = 'Replay';
 
+	buttonContainerEl.classList.add('text-center');
+	buttonContainerEl.appendChild(replayButtonEl);
+
 	insertElementAfter(gameHeader, gameParagraph);
-	insertElementAfter(letterPlaceholders, replayButtonEl);
+	insertElementAfter(letterPlaceholders, buttonContainerEl);
 
 	letterPlaceholders.classList.add(listClass);
 
