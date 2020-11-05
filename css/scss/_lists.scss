@@ -48,6 +48,11 @@ ul {
 				padding: 0;
 			}
 		}
+		&.lose {
+			li {
+				border-bottom: 3px solid $danger;
+			}
+		}
 	}
 
 	&#letterButtons {
