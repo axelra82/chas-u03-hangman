@@ -18,7 +18,7 @@ const changeLayout = (header, listClass) => {
 }
 // No more buttons for you!
 const disableButtons = () => {
-	const letterButtons = document.querySelectorAll('ul#letters li button');
+	const letterButtons = document.querySelectorAll('ul#letterButtons li button');
 	letterButtons.forEach(letterButton => {
 		letterButton.setAttribute('disabled', true);
 	});
