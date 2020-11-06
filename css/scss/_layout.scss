@@ -5,7 +5,6 @@ body {
 }
 
 .container {
-	width: 100vw;
 	padding: 2rem 1rem;
 	margin: 0 auto;
 }
@@ -17,6 +16,8 @@ section#intro-section {
 article#intro-article {
 	border: 1px solid $cc;
 	border-radius: 0.15rem;
+	margin: 1rem;
+	padding: 1rem;
 
 	ul {
 		list-style-type: circle;
@@ -61,9 +62,22 @@ article#intro-article {
 	}
 }
 
+@include media-md {
+	article#intro-article {
+		margin: 0 auto;
+	}
+}
+
 @include media-lg {
 	.container {
 		width: 920px;
+	}
+
+	article#intro-article {
+		div.container {
+			margin: 0 auto 2rem auto;
+			padding: 2rem;
+		}
 	}
 }
 
