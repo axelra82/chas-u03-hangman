@@ -23,7 +23,7 @@ ul {
 	}
 
 	&#secretWord {
-		justify-content: space-between;
+		justify-content: space-around;
 		@include transition;
 
 		li {
