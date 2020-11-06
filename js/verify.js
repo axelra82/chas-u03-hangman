@@ -21,7 +21,11 @@ const verify = (button, letter) => {
 		// Increase wrong count by one (1)
 		wrongCount++;
 		if (wrongCount === maxClick) {
-			gameOver();
+			if (difficulty !== 'hard') {
+				gameOver();
+			} else {
+				gameOver(true);
+			}
 		} else if (wrongCount < maxClick - 1) {
 			console.log(`Ooops! That's ok... You still have ${maxClick - wrongCount} chances left`);
 		} else {

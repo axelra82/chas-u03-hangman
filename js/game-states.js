@@ -1,7 +1,23 @@
 // Tuff non-luck!
-const gameOver = () => {
+const gameOver = (timeout = false) => {
+
 	disableButtons();
-	changeLayout('GAME OVER!', 'Sorry, no dice. The word we were looking for was', 'lose');
+	changeLayout(
+		'GAME OVER!',
+		`${timeout ?
+			`Time's up!`
+			:
+			`Sorry, no dice.`
+		} <strong>The word was</strong>`,
+		'lose'
+	);
+
+	// If timer is active, reset and hide
+	if (timeout) {
+		clearTimer();
+		timerEl.classList.add('hide');
+		timerEl.textContent = '';
+	}
 
 	// Set the record straight
 	lettersArray.forEach(letter => {
@@ -12,15 +28,16 @@ const gameOver = () => {
 // Are you a prodigy or did you just cheat?
 const playerWins = () => {
 	disableButtons();
-	changeLayout('YOU WIN!', 'Great success.', 'win');
+	changeLayout('YOU WIN!', 'Great success', 'win');
 }
 
-const changeLayout = (header, message, listClass) => {
+const changeLayout = (header, message, state) => {
 	const gameHeader = gameEl.querySelector('h2');
 	gameHeader.classList.add('text-center');
 	gameHeader.innerHTML = header;
 
 	const gameParagraph = document.createElement('p');
+	gameParagraph.classList.add(state);
 	gameParagraph.classList.add('text-center');
 	gameParagraph.innerHTML = message;
 
@@ -35,10 +52,10 @@ const changeLayout = (header, message, listClass) => {
 	insertElementAfter(gameHeader, gameParagraph);
 	insertElementAfter(letterPlaceholders, buttonContainerEl);
 
-	letterPlaceholders.classList.add(listClass);
+	letterPlaceholders.classList.add(state);
 
 	replayButtonEl.addEventListener('click', () => {
-		resetGame();
+		resetGame(state);
 	});
 }
 
@@ -54,6 +71,18 @@ const disableButtons = () => {
 		letterButton.setAttribute('disabled', true);
 	});
 }
-const resetGame = () => {
-	alert('- Reset will happen here -');
+const resetGame = (state) => {
+	// Lazy reset. Works
+	// Reloads page rather than staing on same difficulty
+	// reseting the game and maybe having an option to change difficulty
+
+	let userAction;
+	if (state === 'win') {
+		userAction = confirm(`Are you sure you don't wan't to bask in your glory a little while longer?`);
+	} else {
+		userAction = confirm(`That's the spirit! Remember the word (${randomWord}), it might come up again.`);
+	}
+	if (userAction) {
+		location.reload();
+	}
 }

@@ -19,6 +19,14 @@ ul {
 
 		li {
 			@extend .mt-2;
+			p {
+				@extend .text-small;
+				@extend .text-light;
+
+				&:first-of-type {
+					margin-bottom: 0.35rem;
+				}
+			}
 		}
 	}
 

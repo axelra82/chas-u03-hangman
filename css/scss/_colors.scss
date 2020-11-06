@@ -20,8 +20,8 @@ $white: #ffffff;
 $smoke: #f5f5f5;
 
 // Indicators
+$info: #007bff;
 $success: #28a745;
-$info: #17a2b8;
 $warning: #ffc107;
 $danger: #dc3545;
 
@@ -39,5 +39,13 @@ $danger: #dc3545;
 
 	a {
 		color: $white !important;
+	}
+}
+
+.text-light {
+	color: lighten($black, 50) !important;
+
+	a {
+		color: lighten($black, 50) !important;
 	}
 }
