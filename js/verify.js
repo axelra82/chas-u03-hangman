@@ -14,7 +14,7 @@ const verify = (button, letter) => {
 		if (correctCount === lettersArray.length) {
 			playerWins();
 		}
-
+		// Would be nice to have flash for this maybe
 		console.log(`Keep going! You have ${maxClick - wrongCount} chances left`);
 	} else {
 		// No dice!
@@ -29,7 +29,7 @@ const verify = (button, letter) => {
 		} else if (wrongCount < maxClick - 1) {
 			console.log(`Ooops! That's ok... You still have ${maxClick - wrongCount} chances left`);
 		} else {
-			guessesWordEl.innerHTML = 'round';
+			guessesWordEl.innerHTML = 'inch';
 			console.log(`Ooh.. Last chance!`);
 		}
 	}
