@@ -18,6 +18,32 @@ body {
 	&.hide {
 		display: none;
 	}
+
+	p.win {
+		border: 1px solid $success;
+		border-radius: 0.15rem;
+		color: $success;
+		padding: 0.5rem 1.25rem;
+		display: inline-block;
+		margin-left: 50%;
+		transform: translateX(-50%) scale(1);
+		animation: winAnimation 0.75s forwards;
+
+		@keyframes winAnimation {
+			35% {
+				transform: translateX(-50%) scale(1.75);
+			}
+			100% {
+				transform: translateX(-50%) scale(1);
+			}
+		}
+	}
+
+	#timer {
+		&.hide {
+			display: none;
+		}
+	}
 }
 
 @include media-lg {
