@@ -15,7 +15,6 @@ document.addEventListener('keydown', pressed => {
 			if (keyValue == letter) {
 				verify(buttonEl, letter);
 			}
-			// console.log();
 		})
 	}
 });
