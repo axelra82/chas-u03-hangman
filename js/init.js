@@ -93,7 +93,7 @@ const initTimer = () => {
 
 	const second = 1000; // One second in milliseconds
 	const minute = 60; // One minute in seconds
-	const time = minute * .05;
+	const time = minute * 2;
 
 	// Initiate some useful timer variables
 	let init = Date.now(),
