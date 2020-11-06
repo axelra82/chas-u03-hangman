@@ -26,12 +26,19 @@ difficultyEls.forEach(button => {
 		const verifyScriptEl = document.createElement('script');
 		const statesScriptEl = document.createElement('script');
 
+		// File locations
+		const wordsFile = '/js/words.js';
+		const alphaFile = '/js/alphabet.js';
+		const eventsFile = '/js/events-listener-key.js';
+		const verifyFile = '/js/verify.js';
+		const statesFile = '/js/states.js';
+
 		// Add source to elements
-		wordsScriptEl.src = "/js/words.js";
-		alphaScriptEl.src = "/js/alphabet.js";
-		eventsScriptEl.src = "/js/events-listener-key.js";
-		verifyScriptEl.src = "/js/verify.js";
-		statesScriptEl.src = "/js/game-states.js";
+		wordsScriptEl.src = !isGitHub ? wordsFile : `/${myRepo}${wordsFile}`;
+		alphaScriptEl.src = !isGitHub ? alphaFile : `/${myRepo}${alphaFile}`;
+		eventsScriptEl.src = !isGitHub ? eventsFile : `/${myRepo}${eventsFile}`;
+		verifyScriptEl.src = !isGitHub ? verifyFile : `/${myRepo}${verifyFile}`;
+		statesScriptEl.src = !isGitHub ? statesFile : `/${myRepo}${statesFile}`;
 
 		// Append scripts to body
 		document.body.appendChild(wordsScriptEl);
