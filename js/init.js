@@ -1,5 +1,6 @@
 // Init. Intro and game elements
-const introEl = document.querySelector('body section#intro');
+const introSectionEl = document.querySelector('body section#intro-section');
+const introArticleEl = document.querySelector('body article#intro-article');
 const gameEl = document.querySelector('body section#game');
 
 // Timer element
@@ -9,7 +10,7 @@ const timerEl = gameEl.querySelector('div#timer');
 let difficulty = null;
 let timer = false;
 
-const difficultyEls = introEl.querySelectorAll('ul#difficulty li button');
+const difficultyEls = introSectionEl.querySelectorAll('ul#difficulty li button');
 difficultyEls.forEach(button => {
 	button.addEventListener('click', () => {
 		difficulty = button.value;
@@ -41,7 +42,8 @@ difficultyEls.forEach(button => {
 
 		gameEl.classList.remove('hide');
 
-		introEl.remove();
+		introSectionEl.remove();
+		introArticleEl.remove();
 	});
 });
 

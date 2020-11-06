@@ -10,8 +10,23 @@ body {
 	margin: 0 auto;
 }
 
-#intro {
+section#intro-section {
 	text-align: center;
+}
+
+article#intro-article {
+	border: 1px solid $cc;
+	border-radius: 0.15rem;
+
+	ul {
+		list-style-type: circle;
+		li {
+			margin: 0 0 0.75rem 1rem;
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
 #game {

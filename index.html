@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<section id="intro" class="container">
+	<section id="intro-section" class="container pb-0">
 		<h1>
 			Let's play a game!
 		</h1>
@@ -31,7 +31,36 @@
 			</li>
 		</ul>
 	</section>
+	<article id="intro-article" class="container pl-2 pr-2 mb-2">
+		<h3>About</h3>
+		<p>This game is as simple as they come. You will be given a number of empty lines, where the <strong>objective is</strong> to choose <strong>letters</strong> and <strong>guess</strong> what the <strong>word</strong> is.</p>
+		<h3>How to</h3>
+		<ul>
+			<li>
+				Click on the provided letters
+			</li>
+			<li>
+				Use the letters on your keyboard
+			</li>
+			<li>
+				Once a letter has been selected it will be disabled
+			</li>
+			<li>
+				<p>
+					<strong>If your guess was correct</strong> the letter will show instead of the placeholder(s)
+				</p>
+				<p>
+					No points are deducted on correct guesses
+				</p>
+			</li>
+			<li>
+				<strong>If your guess was wrong</strong> one (1) point will be deducted, i.e. you'll have one less guess
+				before game over
+			</li>
+		</ul>
+	</article>
 	<section id="game" class="hide container">
+		<div id="startover"></div>
 		<h2>
 			<span class="guesses-left"></span> <span class="sing-plur">rounds</span> in the chamber
 		</h2>
