@@ -34,9 +34,24 @@ button {
 #difficulty {
 	button {
 		font-size: 1.35rem;
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-		border-width: 3px;
+		padding: 0.375rem 2.25rem;
+		border-width: 1px;
+
+		&[value="easy"] {
+			background: none;
+			border-color: $success;
+			color: $success;
+		}
+		&[value="medium"] {
+			background: none;
+			border-color: $warning;
+			color: $warning;
+		}
+		&[value="hard"] {
+			background: none;
+			border-color: $danger;
+			color: $danger;
+		}
 	}
 }
 
