@@ -31,7 +31,7 @@ difficultyEls.forEach(button => {
 		const alphaFile = '/js/alphabet.js';
 		const eventsFile = '/js/events-listener-key.js';
 		const verifyFile = '/js/verify.js';
-		const statesFile = '/js/states.js';
+		const statesFile = '/js/game-states.js';
 
 		// Add source to elements
 		wordsScriptEl.src = !isGitHub ? wordsFile : `/${myRepo}${wordsFile}`;
