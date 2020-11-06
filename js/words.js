@@ -12,48 +12,36 @@ switch (difficulty) {
 	case 'easy':
 		maxClick = 12;
 		wordArray = [
-			'lie',
-			'gem',
-			'jam',
-			'cup',
-			'ash',
-			'fun',
-			'hay',
-			'fan',
-			'kid',
-			'ton',
+			'fur',
+			'lay',
+			'can',
+			'row',
+			'rib',
+			'tap',
 		];
 		break;
 
 	case 'medium':
 		maxClick = 6;
 		wordArray = [
-			'biography',
-			'glimpse',
-			'rhetoric',
-			'circulation',
-			'dividend',
-			'stuff',
-			'sequence',
-			'abortion',
-			'diagram',
-			'attraction',
+			'amuse',
+			'grace',
+			'sight',
+			'haunt',
+			'piano',
+			'clerk',
 		];
 		break;
 
 	case 'hard':
 		maxClick = 3;
 		wordArray = [
-			'execution',
-			'advertising',
-			'calendar',
-			'depressed',
-			'attachment',
-			'mechanical',
-			'anticipation',
-			'sickness',
-			'brilliance',
+			'discount',
+			'register',
+			'carriage',
 			'terminal',
+			'constant',
+			'dividend',
 		];
 		break;
 
