@@ -1,5 +1,5 @@
 // Create alphabet and create array using split
-const alphabet = 'abcdefghijklmnopqrstuvwxyzåäö'.split('');
+const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 // Get alphabet UL element from document
 const alphabetList = document.querySelector('ul#letterButtons');
