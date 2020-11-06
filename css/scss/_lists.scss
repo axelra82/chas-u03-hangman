@@ -14,8 +14,8 @@ ul {
 
 	&#difficulty {
 		display: flex;
-		justify-content: center;
 		flex-direction: column;
+		justify-content: center;
 
 		li {
 			@extend .mt-2;
@@ -23,7 +23,7 @@ ul {
 	}
 
 	&#secretWord {
-		justify-content: space-between;
+		justify-content: space-around;
 		@include transition;
 
 		li {
@@ -62,6 +62,14 @@ ul {
 			button {
 				font-size: 2rem;
 			}
+		}
+	}
+}
+
+@include media-lg {
+	ul {
+		&#difficulty {
+			flex-direction: row;
 		}
 	}
 }
