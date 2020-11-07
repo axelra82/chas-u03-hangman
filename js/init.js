@@ -6,16 +6,22 @@ const gameEl = document.querySelector('body section#game');
 // Timer element
 const timerEl = gameEl.querySelector('div#timer');
 
+// Include timer class
+const timerScriptEl = document.createElement('script');
+const timerFile = '/js/timer.js';
+timerScriptEl.src = !isGitHub ? timerFile : `/${myRepo}${timerFile}`;
+document.head.appendChild(timerScriptEl);
+
 // Restart button
 const restartEl = document.querySelector('div#restart button');
 restartEl.addEventListener('click', () => {
 	resetGame('inGame');
-	pauseTimer();
 });
 
 // Let's go
 let difficulty = null;
-let timer = false;
+// let hasTimer = false;
+let timer;
 
 const difficultyEls = introSectionEl.querySelectorAll('ul#difficulty li button');
 difficultyEls.forEach(button => {
@@ -23,7 +29,10 @@ difficultyEls.forEach(button => {
 		difficulty = button.value;
 
 		if (difficulty === 'hard') {
-			initTimer();
+			// Instantiate timer with two minutes
+			timer = new Timer(2);
+			timer.start();
+			// initTimer();
 		}
 
 		// Create script elements
@@ -60,77 +69,3 @@ difficultyEls.forEach(button => {
 		introArticleEl.remove();
 	});
 });
-
-const runTimer = (time, minute, second, init, diff, minutes, seconds) => {
-
-	// Number of seconds passed since timer started
-	diff = time - (((Date.now() - init) / second) | 0);
-
-	// Set remaining time variables
-	minutes = parseInt(diff / minute);
-	seconds = parseInt(diff % minute);
-
-	// Check what to display
-	const minSingPlur = minutes < 2 ? 'minute' : 'minutes';
-	const secSingPlur = seconds < 2 ? 'second' : 'seconds';
-
-	const timeLeft = minutes < 1 ? `${seconds} ${secSingPlur}` : seconds !== 0 ?
-		`${minutes} ${minSingPlur} ${seconds} ${secSingPlur}`
-		:
-		`${minutes} ${minSingPlur}`;
-
-	timerEl.textContent = `${timeLeft} remaining`
-
-	// If the differens between total time and current time
-	// is less than or equal to zero (0) we need to do some things
-	if (diff === 0) {
-		// Initilize with full time, i.e. include initial second
-		init = Date.now() + second;
-
-		// Run game over scenario
-		// with timer option
-		gameOver(true);
-	}
-};
-
-const startTimer = (run) => {
-	return setInterval(run, 1000);
-	// return {
-	// 	start: 
-	// }
-}
-
-const clearTimer = () => {
-	console.log('clear');
-	console.log(startTimer());
-	clearInterval(startTimer());
-}
-const pauseTimer = () => {
-	console.log('pause');
-	console.log(startTimer());
-	clearInterval(startTimer());
-}
-
-const initTimer = () => {
-
-	//Show timer
-	timerEl.classList.remove('hide');
-
-	const second = 1000; // One second in milliseconds
-	const minute = 60; // One minute in seconds
-	const time = minute * 2;
-
-	// Initiate some useful timer variables
-	let init = Date.now(),
-		diff,
-		minutes,
-		seconds;
-
-	// Since we don't want to wait a full second before
-	// the timer starts we call timer function once now
-	const runOnce = () => runTimer(time, minute, second, init, diff, minutes, seconds);
-	runOnce();
-
-	// And then initiate interval for timer function
-	startTimer(() => runOnce());
-}
