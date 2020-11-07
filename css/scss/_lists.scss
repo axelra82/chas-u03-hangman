@@ -6,10 +6,6 @@ ul {
 	&#letterButtons {
 		display: flex;
 		flex-wrap: wrap;
-		li,
-		li button {
-			text-transform: uppercase;
-		}
 	}
 
 	&#difficulty {
@@ -65,12 +61,6 @@ ul {
 
 	&#letterButtons {
 		justify-content: center;
-
-		li {
-			button {
-				font-size: 2rem;
-			}
-		}
 	}
 }
 

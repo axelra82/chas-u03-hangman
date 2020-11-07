@@ -94,11 +94,20 @@ button {
 #letterButtons {
 	button {
 		width: 3.75rem;
+		font-size: 2rem;
 
 		&:disabled {
 			background: rgba($smoke, 0.85);
 			border-color: lighten($black, 90);
 			color: darken($smoke, 10);
 		}
+	}
+}
+
+#secretWord,
+#letterButtons {
+	li,
+	li button {
+		text-transform: uppercase;
 	}
 }
