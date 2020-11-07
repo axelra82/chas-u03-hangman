@@ -14,7 +14,7 @@ const gameOver = (timeout = false) => {
 
 	// If timer is active, reset and hide
 	if (timeout) {
-		// clearTimer();
+		timer.reset();
 		timerEl.classList.add('hide');
 		timerEl.textContent = '';
 	}
