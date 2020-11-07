@@ -14,6 +14,7 @@ const gameOver = (timeout = false) => {
 
 	// If timer is active, reset and hide
 	if (timeout) {
+		timer.reset();
 		timerEl.classList.add('hide');
 		timerEl.textContent = '';
 	}
@@ -83,7 +84,11 @@ const resetGame = (state) => {
 		userAction = confirm(`That's the spirit! Remember the word (${randomWord}), it might come up again.`);
 	}
 	if (state === 'inGame') {
+		timer.pause();
 		userAction = confirm(`Are you sure, or was this just an "oopsy" press? Press "OK" to restart the game.`);
+		if (!userAction) {
+			timer.resume();
+		}
 	}
 	if (userAction) {
 		location.reload();
