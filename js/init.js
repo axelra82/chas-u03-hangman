@@ -6,6 +6,13 @@ const gameEl = document.querySelector('body section#game');
 // Timer element
 const timerEl = gameEl.querySelector('div#timer');
 
+// Restart button
+const restartEl = document.querySelector('div#restart button');
+restartEl.addEventListener('click', () => {
+	resetGame('inGame');
+	pauseTimer();
+});
+
 // Let's go
 let difficulty = null;
 let timer = false;
@@ -81,20 +88,29 @@ const runTimer = (time, minute, second, init, diff, minutes, seconds) => {
 		init = Date.now() + second;
 
 		// Run game over scenario
-		// with timer opotion
+		// with timer option
 		gameOver(true);
 	}
 };
 
 const startTimer = (run) => {
-	return {
-		start: setInterval(run, 1000),
-	}
+	return setInterval(run, 1000);
+	// return {
+	// 	start: 
+	// }
 }
 
 const clearTimer = () => {
-	clearInterval(startTimer.start);
+	console.log('clear');
+	console.log(startTimer());
+	clearInterval(startTimer());
 }
+const pauseTimer = () => {
+	console.log('pause');
+	console.log(startTimer());
+	clearInterval(startTimer());
+}
+
 const initTimer = () => {
 
 	//Show timer
@@ -116,5 +132,5 @@ const initTimer = () => {
 	runOnce();
 
 	// And then initiate interval for timer function
-	startTimer(() => runOnce()).start;
+	startTimer(() => runOnce());
 }

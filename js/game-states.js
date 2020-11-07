@@ -79,8 +79,12 @@ const resetGame = (state) => {
 	let userAction;
 	if (state === 'win') {
 		userAction = confirm(`Are you sure you don't wan't to bask in your glory a little while longer?`);
-	} else {
+	}
+	if (state === 'lose') {
 		userAction = confirm(`That's the spirit! Remember the word (${randomWord}), it might come up again.`);
+	}
+	if (state === 'inGame') {
+		userAction = confirm(`Are you sure, or was this just an "oopsy" press? Press "OK" to restart the game.`);
 	}
 	if (userAction) {
 		location.reload();

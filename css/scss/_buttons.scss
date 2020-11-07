@@ -78,7 +78,22 @@ button {
 		}
 	}
 }
+#game {
+	#restart {
+		button {
+			border-color: $info;
+			background: none;
+			color: $info;
+			padding: 0.375rem 0.75rem;
+			margin: 0;
+			font-size: 1rem;
 
+			.restart-icon {
+				@include restartIcon($color: $info, $width: 0.75rem);
+			}
+		}
+	}
+}
 #difficulty {
 	button {
 		font-size: 1.35rem;
