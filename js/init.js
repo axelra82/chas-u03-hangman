@@ -21,7 +21,7 @@ restartBtnEl.addEventListener('click', () => {
 
 // Let's go
 let difficulty = null;
-// let hasTimer = false;
+let hasTimer = false;
 let timer;
 
 const difficultyEls = introSectionEl.querySelectorAll('ul#difficulty li button');
@@ -33,7 +33,8 @@ difficultyEls.forEach(button => {
 			// Instantiate timer with two minutes
 			timer = new Timer(2);
 			timer.start();
-			// initTimer();
+
+			hasTimer = true;
 		}
 
 		// Create script elements

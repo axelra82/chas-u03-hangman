@@ -50,8 +50,9 @@ switch (difficulty) {
 }
 
 // Show initial guess count
-const guessesCountEl = document.querySelector('body section#game h2 span.guesses-left');
-const guessesWordEl = document.querySelector('body section#game h2 span.sing-plur');
+const inGameHeadingEl = gameEl.querySelector('h2');
+const guessesCountEl = inGameHeadingEl.querySelector('span.guesses-left');
+const guessesWordEl = inGameHeadingEl.querySelector('span.sing-plur');
 guessesCountEl.innerHTML = maxClick;
 
 // Get random word from word array
@@ -60,7 +61,7 @@ const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 // Create array of letters from random word using split
 const lettersArray = randomWord.split('');
 
-const letterPlaceholders = document.querySelector('ul#secretWord');
+const letterPlaceholders = gameEl.querySelector('ul#secretWord');
 lettersArray.forEach(() => {
 	const liEl = document.createElement('li');
 	liEl.classList.add('secret');

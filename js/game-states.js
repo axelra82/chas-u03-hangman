@@ -1,7 +1,11 @@
 // Tuff non-luck!
-const gameOver = (hasTimer = false) => {
+const gameOver = () => {
 
-	disableButtons();
+	// Set the record straight
+	lettersArray.forEach(letter => {
+		placeholderToLetter(letter);
+	});
+
 	changeLayout(
 		'GAME OVER!',
 		`${hasTimer ?
@@ -9,9 +13,27 @@ const gameOver = (hasTimer = false) => {
 			:
 			`Sorry, no dice.`
 		} <strong>The word was</strong>`,
-		'lose'
+		'lose',
 	);
+}
 
+// Are you a prodigy or did you just cheat?
+const playerWins = () => {
+	changeLayout(
+		'YOU WIN!',
+		'Great success',
+		'win',
+	);
+}
+
+const changeLayout = (header, message, state) => {
+	// Scroll to top of in game session view so player can se what's
+	// going on. Extra important for smaller screens, but nice either way
+	gameEl.scrollIntoView({
+		behavior: 'smooth'
+	});
+
+	disableButtons();
 	// If timer is active, reset and hide
 	if (hasTimer) {
 		timer.reset();
@@ -23,19 +45,6 @@ const gameOver = (hasTimer = false) => {
 	// we'll be showing one below result
 	restartEl.classList.add('hide');
 
-	// Set the record straight
-	lettersArray.forEach(letter => {
-		placeholderToLetter(letter);
-	});
-}
-
-// Are you a prodigy or did you just cheat?
-const playerWins = () => {
-	disableButtons();
-	changeLayout('YOU WIN!', 'Great success', 'win');
-}
-
-const changeLayout = (header, message, state) => {
 	const gameHeader = gameEl.querySelector('h2');
 	gameHeader.classList.add('text-center');
 	gameHeader.innerHTML = header;
@@ -89,7 +98,7 @@ const resetGame = (state) => {
 	}
 	if (state === 'inGame') {
 		// Only for the tuffest
-		if (difficulty === 'hard') {
+		if (hasTimer) {
 			timer.pause();
 		}
 
@@ -97,7 +106,7 @@ const resetGame = (state) => {
 		userAction = confirm(`Are you sure, or was this just an "oopsy" press? Press "OK" to restart the game.`);
 
 		// Only for the tuffest
-		if (difficulty === 'hard' && !userAction) {
+		if (hasTimer && !userAction) {
 			timer.resume();
 		}
 	}
