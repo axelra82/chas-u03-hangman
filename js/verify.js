@@ -1,3 +1,23 @@
+// A little switcheroo magic from placeholder to letter
+const placeholderToLetter = (letter) => {
+	const placeHolderItems = letterPlaceholders.querySelectorAll('li');
+	lettersArray.forEach((l, i) => {
+		if (l === letter) {
+			// YEAY!
+			// Increase correct count by one (1)
+			correctCount++;
+
+			// Some DOM manipulation
+			const placeHolderItem = placeHolderItems[i];
+			placeHolderItem.classList.remove('secret')
+			placeHolderItem.classList.add('correct')
+			placeHolderItem.innerHTML = letter;
+		}
+	});
+
+	return;
+}
+
 // Check whats happening
 const verify = (button, letter) => {
 	// Button is clicked, don't be a jerk!
@@ -21,11 +41,7 @@ const verify = (button, letter) => {
 		// Increase wrong count by one (1)
 		wrongCount++;
 		if (wrongCount === maxClick) {
-			if (difficulty !== 'hard') {
-				gameOver();
-			} else {
-				gameOver(true);
-			}
+			gameOver();
 		} else if (wrongCount < maxClick - 1) {
 			console.log(`Ooops! That's ok... You still have ${maxClick - wrongCount} chances left`);
 		} else {
@@ -36,25 +52,6 @@ const verify = (button, letter) => {
 
 	// At this point we can correct remining guess(es)
 	guessesCountEl.innerHTML = maxClick - wrongCount;
-
-	return;
-}
-
-const placeholderToLetter = (letter) => {
-	const placeHolderItems = letterPlaceholders.querySelectorAll('li');
-	lettersArray.forEach((l, i) => {
-		if (l === letter) {
-			// YEAY!
-			// Increase correct count by one (1)
-			correctCount++;
-
-			// Some DOM manipulation
-			const placeHolderItem = placeHolderItems[i];
-			placeHolderItem.classList.remove('secret')
-			placeHolderItem.classList.add('correct')
-			placeHolderItem.innerHTML = letter;
-		}
-	});
 
 	return;
 }

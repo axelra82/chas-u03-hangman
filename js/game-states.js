@@ -1,37 +1,50 @@
 // Tuff non-luck!
-const gameOver = (timeout = false) => {
-
-	disableButtons();
-	changeLayout(
-		'GAME OVER!',
-		`${timeout ?
-			`Time's up!`
-			:
-			`Sorry, no dice.`
-		} <strong>The word was</strong>`,
-		'lose'
-	);
-
-	// If timer is active, reset and hide
-	if (timeout) {
-		timer.reset();
-		timerEl.classList.add('hide');
-		timerEl.textContent = '';
-	}
+const gameOver = () => {
 
 	// Set the record straight
 	lettersArray.forEach(letter => {
 		placeholderToLetter(letter);
 	});
+
+	changeLayout(
+		'GAME OVER!',
+		`${hasTimer ?
+			`Time's up!`
+			:
+			`Sorry, no dice.`
+		} <strong>The word was</strong>`,
+		'lose',
+	);
 }
 
 // Are you a prodigy or did you just cheat?
 const playerWins = () => {
-	disableButtons();
-	changeLayout('YOU WIN!', 'Great success', 'win');
+	changeLayout(
+		'YOU WIN!',
+		'Great success',
+		'win',
+	);
 }
 
 const changeLayout = (header, message, state) => {
+	// Scroll to top of in game session view so player can se what's
+	// going on. Extra important for smaller screens, but nice either way
+	gameEl.scrollIntoView({
+		behavior: 'smooth'
+	});
+
+	disableButtons();
+	// If timer is active, reset and hide
+	if (hasTimer) {
+		timer.reset();
+		timerEl.classList.add('hide');
+		timerEl.textContent = '';
+	}
+
+	// Hide in game restart button since
+	// we'll be showing one below result
+	restartEl.classList.add('hide');
+
 	const gameHeader = gameEl.querySelector('h2');
 	gameHeader.classList.add('text-center');
 	gameHeader.innerHTML = header;
@@ -84,13 +97,21 @@ const resetGame = (state) => {
 		userAction = confirm(`That's the spirit! Remember the word (${randomWord}), it might come up again.`);
 	}
 	if (state === 'inGame') {
-		timer.pause();
+		// Only for the tuffest
+		if (hasTimer) {
+			timer.pause();
+		}
+
+		// Wait and see approach
 		userAction = confirm(`Are you sure, or was this just an "oopsy" press? Press "OK" to restart the game.`);
-		if (!userAction) {
+
+		// Only for the tuffest
+		if (hasTimer && !userAction) {
 			timer.resume();
 		}
 	}
 	if (userAction) {
+		// That's a go, let's reload page
 		location.reload();
 	}
 }

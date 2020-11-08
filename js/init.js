@@ -12,15 +12,16 @@ const timerFile = '/js/timer.js';
 timerScriptEl.src = !isGitHub ? timerFile : `/${myRepo}${timerFile}`;
 document.head.appendChild(timerScriptEl);
 
-// Restart button
-const restartEl = document.querySelector('div#restart button');
-restartEl.addEventListener('click', () => {
+// In game restart button div section
+const restartEl = document.querySelector('div#restart');
+const restartBtnEl = restartEl.querySelector('button');
+restartBtnEl.addEventListener('click', () => {
 	resetGame('inGame');
 });
 
 // Let's go
 let difficulty = null;
-// let hasTimer = false;
+let hasTimer = false;
 let timer;
 
 const difficultyEls = introSectionEl.querySelectorAll('ul#difficulty li button');
@@ -32,7 +33,8 @@ difficultyEls.forEach(button => {
 			// Instantiate timer with two minutes
 			timer = new Timer(2);
 			timer.start();
-			// initTimer();
+
+			hasTimer = true;
 		}
 
 		// Create script elements

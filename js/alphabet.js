@@ -23,6 +23,18 @@ alphabet.forEach(letter => {
 
 	// Add click event listner for each letter
 	buttonEl.addEventListener('click', () => {
+
+		// Check input and see what to do next
 		verify(buttonEl, letter);
+
+		// Scroll up to guesses and palceholder
+		// Extra important on smaller screens but nice either way
+		inGameHeadingEl.scrollIntoView({
+			behavior: 'smooth'
+		});
+
+		// Don't need this anymore since each button
+		// is disabled after they are clicked
+		buttonEl.removeEventListener('click', () => { });
 	});
 });
