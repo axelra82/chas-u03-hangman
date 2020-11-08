@@ -21,7 +21,7 @@ $github: "https://axelra82.github.io/chas-u03-hangman";
 
 @mixin gallow($width: 1rem) {
 	width: $width;
-	content: url("/assets/graphics/gallow.svg");
+	content: url("#{$github}/assets/graphics/gallow.svg");
 }
 
 @mixin player($width: 1rem) {
