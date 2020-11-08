@@ -46,6 +46,7 @@ const changeLayout = (header, message, state) => {
 
 	const gameHeader = gameEl.querySelector('h2');
 	gameHeader.classList.add('text-center');
+	gameHeader.classList.add('mt-2');
 	gameHeader.innerHTML = header;
 
 	const gameParagraph = document.createElement('p');

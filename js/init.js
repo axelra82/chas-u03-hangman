@@ -32,9 +32,7 @@ let timer;
 const difficultyEls = introSectionEl.querySelectorAll('ul#difficulty li button');
 difficultyEls.forEach(button => {
 	button.addEventListener('click', () => {
-		const initStageGraphicEl = document.createElement('div');
-		initStageGraphicEl.classList.add('player-stage-0');
-		currentStage.appendChild(initStageGraphicEl);
+		currentStage.classList.add('player-stage-0');
 
 		difficulty = button.value;
 
