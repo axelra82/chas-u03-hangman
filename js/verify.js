@@ -20,7 +20,7 @@ const placeholderToLetter = (letter) => {
 
 // Check whats happening
 const verify = (button, letter) => {
-	// Button is clicked, don't be a jerk!
+	// Button is clicked
 	// Disable and remove listener
 	button.setAttribute('disabled', 'true');
 	button.removeEventListener;
@@ -34,19 +34,21 @@ const verify = (button, letter) => {
 		if (correctCount === lettersArray.length) {
 			playerWins();
 		}
-		// Would be nice to have flash for this maybe
-		console.log(`Keep going! You have ${maxClick - wrongCount} chances left`);
+		// Would be nice to have flash card for this maybe
+		// Low prio: if there is time
+		// console.log(`Keep going! You have ${maxClick - wrongCount} chances left`);
 	} else {
-		// No dice!
 		// Increase wrong count by one (1)
 		wrongCount++;
 		if (wrongCount === maxClick) {
+			// No dice!
 			gameOver();
 		} else if (wrongCount < maxClick - 1) {
-			console.log(`Ooops! That's ok... You still have ${maxClick - wrongCount} chances left`);
+			// Keep or remove? i.e. just go to last chance warning.
+			// console.log(`Ooops! That's ok... You still have ${maxClick - wrongCount} chances left`);
 		} else {
 			guessesWordEl.innerHTML = 'inch';
-			console.log(`Ooh.. Last chance!`);
+			// console.log(`Ooh.. Last chance!`);
 		}
 	}
 
