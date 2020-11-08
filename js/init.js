@@ -12,9 +12,14 @@ const timerFile = '/js/timer.js';
 timerScriptEl.src = !isGitHub ? timerFile : `/${myRepo}${timerFile}`;
 document.head.appendChild(timerScriptEl);
 
-// In game restart button div section
-const restartEl = document.querySelector('div#restart');
-const restartBtnEl = restartEl.querySelector('button');
+// In game top section
+const gameTopEl = document.querySelector('div#top');
+
+// Current stage graphic
+const currentStage = gameTopEl.querySelector('#current-stage');
+
+// Listen for restart request
+const restartBtnEl = gameTopEl.querySelector('button');
 restartBtnEl.addEventListener('click', () => {
 	resetGame('inGame');
 });
@@ -27,6 +32,10 @@ let timer;
 const difficultyEls = introSectionEl.querySelectorAll('ul#difficulty li button');
 difficultyEls.forEach(button => {
 	button.addEventListener('click', () => {
+		const initStageGraphicEl = document.createElement('div');
+		initStageGraphicEl.classList.add('player-stage-0');
+		currentStage.appendChild(initStageGraphicEl);
+
 		difficulty = button.value;
 
 		if (difficulty === 'hard') {

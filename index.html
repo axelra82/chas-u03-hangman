@@ -51,6 +51,11 @@
 		<h1>
 			Let's play a game!
 		</h1>
+		<div id="graphics" class="mb-1">
+			<div id="executioner"></div>
+			<div id="vs"><strong>VS</strong></div>
+			<div id="player"></div>
+		</div>
 		<h2>Choose your level</h2>
 		<ul id="difficulty">
 			<li>
@@ -101,8 +106,9 @@
 			</li>
 		</ul>
 	</article>
-	<section id="game" class="hide container">
-		<div id="restart" class="mb-1 text-right">
+	<section id="game" class="hide container pt-0">
+		<div id="top" class="pt-1 mb-1">
+			<div id="current-stage"></div>
 			<button><span class="restart-icon"></span> restart game</button>
 		</div>
 		<h2>

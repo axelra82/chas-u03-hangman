@@ -41,9 +41,8 @@ const changeLayout = (header, message, state) => {
 		timerEl.textContent = '';
 	}
 
-	// Hide in game restart button since
-	// we'll be showing one below result
-	restartEl.classList.add('hide');
+	// Hide in game top since game is over
+	gameTopEl.classList.add('hide');
 
 	const gameHeader = gameEl.querySelector('h2');
 	gameHeader.classList.add('text-center');
