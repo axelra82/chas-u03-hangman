@@ -53,7 +53,7 @@ const verify = (button, letter) => {
 			// Keep or remove? i.e. just go to last chance warning.
 			// console.log(`Ooops! That's ok... You still have ${maxClick - wrongCount} chances left`);
 		} else {
-			guessesWordEl.innerHTML = 'inch';
+			guessesWordEl.innerHTML = 'guess';
 			// console.log(`Ooh.. Last chance!`);
 		}
 

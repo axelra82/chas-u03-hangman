@@ -19,9 +19,9 @@
 // Don't nag me!
 $github: "https://axelra82.github.io/chas-u03-hangman";
 
-@mixin executioner($width: 1rem) {
+@mixin gallow($width: 1rem) {
 	width: $width;
-	content: url("#{$github}/assets/graphics/executioner.svg");
+	content: url("/assets/graphics/gallow.svg");
 }
 
 @mixin player($width: 1rem) {
@@ -37,8 +37,8 @@ $github: "https://axelra82.github.io/chas-u03-hangman";
 }
 
 // Icon / Graphics classes
-.executioner {
-	@include executioner($width: 8rem);
+.gallow {
+	@include gallow($width: 8rem);
 	margin: 0 auto;
 }
 

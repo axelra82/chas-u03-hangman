@@ -53,12 +53,12 @@
 			Let's play a game!
 		</h1>
 		<div id="graphics" class="mb-1">
-			<div id="executioner"></div>
+			<div id="player"></div>
 			<div id="vs">
 				<strong id="vs-v">V</strong>
 				<strong id="vs-s">S</strong>
 			</div>
-			<div id="player"></div>
+			<div id="gallow"></div>
 		</div>
 		<h2>Choose your level</h2>
 
@@ -102,7 +102,7 @@
 					<strong>If your guess was correct</strong> the letter will show instead of the placeholder(s)
 				</p>
 				<p>
-					<em>No points are deducted on correct guesses</em>
+					<em>No points are deducted for correct guesses</em>
 				</p>
 			</li>
 			<li>
@@ -130,11 +130,11 @@
 		<div id="final-state">
 			<!-- Some useful player feedback -->
 			<h2>
-				You have <span class="guesses-left"></span> <span class="sing-plur">inches</span> of rope left
+				You have <span class="guesses-left"></span> <span class="sing-plur">guesses</span> left
 			</h2>
 
 			<!-- Game elements -->
-			<div id="timer" class="mb-2 text-light text-small hide"></div>
+			<div id="timer" class="mb-2 text-right text-light text-small hide"></div>
 			<ul id="secretWord" class="mb-2"></ul>
 			<ul id="letterButtons"></ul>
 		</div>
@@ -142,16 +142,26 @@
 
 	<!-- Footer with credits and nonsense notice -->
 	<footer class="container text-small text-light">
-		<h4 class="mb-0 text-small">CREDITS</h4>
-		<p class="mb-0">
-			Character vector graphic <a href="https://www.freepik.com/free-vector/nice-businessman-character-set_2960917.htm" target="_blank" rel="noopener nofollow">designed by pikisuperstar @Freepik</a>
-		</p>
-		<p>
-			Gallows vector graphics from <a href="https://www.vecteezy.com/vector-art/169206-gallows-vector-icons" target="_blank" rel="noopener nofollow">Vecteezy</a>
-		</p>
-		<p>
-			<strong>NONSENSE!</strong> A RaWRaw Student production, © COPYWRIGHT, all rights reserved (or whatever).  No ropes, keys, keboards, coffee cups, screens, processors or trees were harmed during the making if this game.
-		</p>
+		<aside>
+			<h3 class="mb-0 text-small">Author</h3>
+			<p>
+				Axel Roussille Åberg @<a href="https://82con.com">82 Consulting</a>
+			</p>
+		</aside>
+		<aside>
+			<h4 class="mb-0 text-small">Credits</h4>
+			<p class="mb-0">
+				Character vector graphic <a href="https://www.freepik.com/free-vector/nice-businessman-character-set_2960917.htm" target="_blank" rel="noopener nofollow">designed by pikisuperstar @Freepik</a>
+			</p>
+			<p>
+				Gallow vector graphics from <a href="https://www.vecteezy.com/vector-art/169206-gallows-vector-icons" target="_blank" rel="noopener nofollow">Vecteezy</a>
+			</p>
+		</aside>
+		<aside>
+			<p>
+				© COPYWRIGHT, all rights reserved (or whatever).  No ropes, keys, keboards, coffee cups, screens, processors, trees or unicorns 🦄 were harmed during the making if this game (probably).
+			</p>
+		</aside>
 	</footer>
 </body>
 

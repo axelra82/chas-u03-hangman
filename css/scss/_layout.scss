@@ -21,14 +21,14 @@ section#intro-section {
 		display: grid;
 		grid-template-columns: 1.25fr 0.5fr 1.25fr;
 
-		#executioner,
+		#player,
 		#vs,
-		#player {
+		#gallow {
 			align-self: center;
 		}
 
-		#executioner {
-			@include executioner($width: 100%);
+		#player {
+			@include player($width: 100%);
 			justify-self: right;
 		}
 		#vs {
@@ -48,8 +48,8 @@ section#intro-section {
 				transform: translate(10%, -45%);
 			}
 		}
-		#player {
-			@include player($width: 100%);
+		#gallow {
+			@include gallow($width: 100%);
 			justify-self: left;
 		}
 	}
@@ -80,7 +80,8 @@ article#intro-article {
 		#current-stage {
 			position: absolute;
 			z-index: -1;
-			top: 0;
+			top: 0.5rem;
+			left: -3rem;
 
 			&[class^="player-stage-"] {
 				width: 8rem;
@@ -91,6 +92,7 @@ article#intro-article {
 	h2 {
 		font-size: 1rem;
 		z-index: 1;
+		text-align: right;
 	}
 
 	p.win {
@@ -150,9 +152,9 @@ article#intro-article {
 }
 
 footer {
-	p:last-child {
-		border-top: 1px solid $cc;
-		padding-top: 1rem;
+	aside:not(:last-child) {
+		border-bottom: 1px solid $cc;
+		margin-bottom: 1rem;
 	}
 }
 
@@ -169,8 +171,8 @@ footer {
 
 	section#intro-section {
 		#graphics {
-			#executioner {
-				@include executioner($width: 50%);
+			#gallow {
+				@include gallow($width: 50%);
 			}
 			#vs {
 				font-size: 3rem;
@@ -191,7 +193,7 @@ footer {
 	#game {
 		#final-state-graphic {
 			&.win {
-				top: -1rem;
+				top: 1rem;
 				left: -1rem;
 				@include player(17rem);
 			}
