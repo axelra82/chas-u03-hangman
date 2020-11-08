@@ -57,7 +57,9 @@ const verify = (button, letter) => {
 			// console.log(`Ooh.. Last chance!`);
 		}
 
-		const lvl2Factor = 2;
+		// Resuable factor value for hangman progression
+		const lvlFactor = 2;
+
 		// Visualize stage
 		switch (gameLevel) {
 			case 1:
@@ -70,27 +72,34 @@ const verify = (button, letter) => {
 						currentStage.classList.add(`player-stage-${wrongCount}`);
 						break;
 					case 2:
-						currentStage.classList.add(`player-stage-${wrongCount + lvl2Factor}`);
+						currentStage.classList.add(`player-stage-${wrongCount + lvlFactor}`);
 						break;
 					case 3:
-						currentStage.classList.add(`player-stage-${wrongCount + (lvl2Factor * 2)}`);
+						currentStage.classList.add(`player-stage-${wrongCount + (lvlFactor * lvlFactor)}`);
 						break;
 					case 4:
-						currentStage.classList.add(`player-stage-${wrongCount + (lvl2Factor * 3)}`);
+						currentStage.classList.add(`player-stage-${wrongCount + (lvlFactor * 3)}`);
 						break;
 					case 5:
-						currentStage.classList.add(`player-stage-${wrongCount * (lvl2Factor - 1)}`);
+						currentStage.classList.add(`player-stage-${wrongCount * (lvlFactor - 1)}`);
 						break;
 					case 6:
-						currentStage.classList.add(`player-stage-${wrongCount * lvl2Factor}`);
-						break;
-
-					default:
+						currentStage.classList.add(`player-stage-${wrongCount * lvlFactor}`);
 						break;
 				}
 				break;
-
-			default:
+			case 3:
+				switch (wrongCount) {
+					case 1:
+						currentStage.classList.add(`player-stage-${wrongCount + lvlFactor}`);
+						break;
+					case 2:
+						currentStage.classList.add(`player-stage-${wrongCount + (lvlFactor * 4)}`);
+						break;
+					case 3:
+						currentStage.classList.add(`player-stage-${wrongCount + (lvlFactor * 5)}`);
+						break;
+				}
 				break;
 		}
 	}
