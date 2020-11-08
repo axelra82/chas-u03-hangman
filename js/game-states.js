@@ -84,13 +84,21 @@ const resetGame = (state) => {
 		userAction = confirm(`That's the spirit! Remember the word (${randomWord}), it might come up again.`);
 	}
 	if (state === 'inGame') {
-		timer.pause();
+		// Only for the tuffest
+		if (difficulty === 'hard') {
+			timer.pause();
+		}
+
+		// Wait and see approach
 		userAction = confirm(`Are you sure, or was this just an "oopsy" press? Press "OK" to restart the game.`);
-		if (!userAction) {
+
+		// Only for the tuffest
+		if (difficulty === 'hard' && !userAction) {
 			timer.resume();
 		}
 	}
 	if (userAction) {
+		// That's a go, let's reload page
 		location.reload();
 	}
 }
