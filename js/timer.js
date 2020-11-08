@@ -43,10 +43,11 @@ class Timer {
 		const minSingPlur = minutes < 2 ? 'minute' : 'minutes';
 		const secSingPlur = seconds < 2 ? 'second' : 'seconds';
 
-		const timeLeft = minutes < 1 ? `${seconds} ${secSingPlur}` : seconds !== 0 ?
-			`${minutes} ${minSingPlur} ${seconds} ${secSingPlur}`
-			:
-			`${minutes} ${minSingPlur}`;
+		const timeLeft = minutes < 1 ?
+			`${seconds} ${secSingPlur}` : seconds !== 0 ?
+				`${minutes} ${minSingPlur} ${seconds} ${secSingPlur}`
+				:
+				`${minutes} ${minSingPlur}`;
 
 		timerEl.textContent = `${timeLeft} remaining`
 
