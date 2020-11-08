@@ -25,7 +25,7 @@ restartBtnEl.addEventListener('click', () => {
 });
 
 // Let's go
-let difficulty = null;
+let gameLevel = null;
 let hasTimer = false;
 let timer;
 
@@ -34,9 +34,9 @@ difficultyEls.forEach(button => {
 	button.addEventListener('click', () => {
 		currentStage.classList.add('player-stage-0');
 
-		difficulty = button.value;
+		gameLevel = parseInt(button.value);
 
-		if (difficulty === 'hard') {
+		if (gameLevel === 3) {
 			// Instantiate timer with two minutes
 			timer = new Timer(2);
 			timer.start();

@@ -17,18 +17,18 @@ const binArr = x => {
 
 // Set up array of words for random selection
 let wordArray = new Array;
-switch (difficulty) {
-	case 'easy':
+switch (gameLevel) {
+	case 1:
 		maxClick = 12;
 		wordArray = ['ZnVy', 'bGF5', 'Y2Fu', 'cm93', 'cmli', 'dGFw'];
 		break;
 
-	case 'medium':
+	case 2:
 		maxClick = 6;
 		wordArray = ['YW11c2U=', 'Z3JhY2U=', 'c2lnaHQ=', 'aGF1bnQ=', 'cGlhbm8=', 'Y2xlcms='];
 		break;
 
-	case 'hard':
+	case 3:
 		maxClick = 3;
 		wordArray = ['ZGlzY291bnQ=', 'cmVnaXN0ZXI=', 'Y2FycmlhZ2U=', 'dGVybWluYWw=', 'Y29uc3RhbnQ=', 'ZGl2aWRlbmQ='];
 		break;

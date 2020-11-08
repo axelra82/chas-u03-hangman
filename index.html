@@ -47,6 +47,7 @@
 </head>
 
 <body>
+	<!-- Intro section with graphics -->
 	<section id="intro-section" class="container pb-1">
 		<h1>
 			Let's play a game!
@@ -60,24 +61,28 @@
 			<div id="player"></div>
 		</div>
 		<h2>Choose your level</h2>
+
+		<!-- Let player choose game level -->
 		<ul id="difficulty">
 			<li>
-				<button value="easy">Beginner</button>
+				<button value="1">Beginner</button>
 				<p>Good place to start 😊</p>
 				<p><strong>12 guesses</strong></p>
 			</li>
 			<li>
-				<button value="medium">Intermediate</button>
+				<button value="2">Intermediate</button>
 				<p>Should be fine 😎</p>
 				<p><strong>6 guesses</strong></p>
 			</li>
 			<li>
-				<button value="hard">Master</button>
+				<button value="3">Master</button>
 				<p>Are you sure about this? 🤔</p>
 				<p><strong>3 guesses + 2 minute timer!</strong></p>
 			</li>
 		</ul>
 	</section>
+
+	<!-- An intro about the game and how to -->
 	<article id="intro-article" class="container">
 		<h3>About</h3>
 		<p>This game is as simple as they come. You will be given a number of empty lines, where the <strong>objective is</strong> to choose <strong>letters</strong> and <strong>guess</strong> what the <strong>word</strong> is.</p>
@@ -108,19 +113,32 @@
 				To restart the game press the <span class="restart-icon"></span> button in the upper right corner
 			</li>
 		</ul>
+		<p class="text-small">
+			<strong>PS.</strong> Don't bother checking the source code, their are no words in there 😉
+		</p>
 	</article>
+
+	<!-- The game container -->
 	<section id="game" class="hide container pt-0">
+
+		<!-- Top section with graphics and restart button -->
 		<div id="top" class="pt-1 mb-1">
 			<div id="current-stage"></div>
 			<button><span class="restart-icon"></span> restart game</button>
 		</div>
+
+		<!-- Some useful player feedback -->
 		<h2>
 			You have <span class="guesses-left"></span> <span class="sing-plur">inches</span> of rope left
 		</h2>
+
+		<!-- Game elements -->
 		<div id="timer" class="mb-2 text-light text-small"></div>
 		<ul id="secretWord" class="mb-2"></ul>
 		<ul id="letterButtons"></ul>
 	</section>
+
+	<!-- Footer with credits and nonsense notice -->
 	<footer class="container text-small text-light">
 		<h4 class="mb-0 text-small">CREDITS</h4>
 		<p class="mb-0">
