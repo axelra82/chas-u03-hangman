@@ -37,45 +37,43 @@ a {
 }
 
 // Headings
+$headings: $h1 $h2 $h3 $h4 $h5 $h6;
 @for $i from 1 through 6 {
 	h#{$i} {
 		font-family: "Helvetica", sans-serif;
 	}
+	.h#{$i} {
+		font-size: #{nth($headings, $i)}rem !important;
+	}
 }
 
-h1,
-.h1 {
+h1 {
 	font-size: #{$h1}rem;
 	margin: 0 0 #{($h1 / 2)}rem 0;
 	font-weight: 700 !important;
 }
 
-h2,
-.h2 {
+h2 {
 	font-size: #{$h2}rem;
 	margin: 0 0 #{($h2 / 2)}rem 0;
 }
 
-h3,
-.h3 {
+h3 {
 	font-size: #{$h3}rem;
 	margin: 0 0 #{($h3 / 2)}rem 0;
 }
 
-h4,
-.h4 {
+h4 {
 	font-size: #{$h4}rem;
 	margin: 0 0 #{($h4 / 2)}rem 0;
 }
 
-h5,
-.h5 {
+h5 {
 	font-size: #{$h5}rem;
 	margin: 0 0 #{($h5 / 2)}rem 0;
 }
 
-h6,
-.h6 {
+h6 {
 	font-size: #{$h6}rem;
 	margin: 0 0 #{($h6 / 2)}rem 0;
 }
