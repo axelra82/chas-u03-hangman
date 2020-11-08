@@ -15,6 +15,43 @@ body {
 
 section#intro-section {
 	text-align: center;
+
+	#graphics {
+		display: grid;
+		grid-template-columns: 1.25fr 0.5fr 1.25fr;
+
+		#executioner,
+		#vs,
+		#player {
+			align-self: center;
+		}
+
+		#executioner {
+			@include executioner($width: 100%);
+			justify-self: right;
+		}
+		#vs {
+			font-size: 2rem;
+			position: relative;
+			#vs-v,
+			#vs-s {
+				justify-self: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+			}
+			#vs-v {
+				transform: translate(-65%, -60%);
+			}
+			#vs-s {
+				transform: translate(10%, -45%);
+			}
+		}
+		#player {
+			@include player($width: 100%);
+			justify-self: left;
+		}
+	}
 }
 
 article#intro-article {
@@ -34,7 +71,33 @@ article#intro-article {
 	}
 }
 
+footer {
+	p:last-child {
+		border-top: 1px solid $cc;
+		padding-top: 1rem;
+	}
+}
+
 #game {
+	#top {
+		text-align: right;
+		position: relative;
+
+		#current-stage {
+			position: absolute;
+			z-index: -1;
+
+			&[class^="player-stage-"] {
+				width: 8rem;
+			}
+		}
+	}
+
+	h2 {
+		background: rgba($white, 0.5);
+		z-index: 1;
+	}
+
 	p.win {
 		border: 1px solid $success;
 		border-radius: 0.15rem;
@@ -65,6 +128,20 @@ article#intro-article {
 @include media-lg {
 	.container {
 		width: 920px;
+	}
+
+	section#intro-section {
+		#graphics {
+			#executioner {
+				@include executioner($width: 50%);
+			}
+			#vs {
+				font-size: 3rem;
+			}
+			#player {
+				@include player($width: 50%);
+			}
+		}
 	}
 
 	article#intro-article {

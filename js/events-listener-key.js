@@ -12,7 +12,7 @@ document.addEventListener('keydown', pressed => {
 		const buttonListItems = alphabetList.querySelectorAll('li button:not([disabled])');
 		buttonListItems.forEach(buttonEl => {
 			const letter = buttonEl.textContent;
-			if (keyValue == letter) {
+			if (keyValue === letter) {
 				verify(buttonEl, letter);
 			}
 		})

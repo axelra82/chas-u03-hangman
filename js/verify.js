@@ -25,6 +25,12 @@ const verify = (button, letter) => {
 	button.setAttribute('disabled', 'true');
 	button.removeEventListener;
 
+	// Scroll up to guesses and palceholder
+	// Extra important on smaller screens but nice either way
+	gameEl.scrollIntoView({
+		behavior: 'smooth'
+	});
+
 	// Check if clicked letter exists in word letter array
 	if (lettersArray.includes(letter)) {
 
@@ -50,6 +56,9 @@ const verify = (button, letter) => {
 			guessesWordEl.innerHTML = 'inch';
 			// console.log(`Ooh.. Last chance!`);
 		}
+
+		// Visualize stage
+		currentStage.classList.add(`player-stage-${wrongCount}`);
 	}
 
 	// At this point we can correct remining guess(es)
