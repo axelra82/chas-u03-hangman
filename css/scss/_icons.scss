@@ -18,18 +18,18 @@
 
 @mixin executioner($width: 1rem) {
 	width: $width;
-	content: url("/assets/graphics/executioner.svg");
+	content: url("https://axelra82.github.io/chas-u03-hangman/assets/graphics/executioner.svg");
 }
 
 @mixin player($width: 1rem) {
 	width: $width;
-	content: url("/assets/graphics/player.svg");
+	content: url("https://axelra82.github.io/chas-u03-hangman/assets/graphics/player.svg");
 }
 
 @for $i from 0 through 12 {
 	.player-stage-#{$i} {
 		width: 1rem;
-		content: url("/assets/graphics/stages/#{$i}.svg");
+		content: url("https://axelra82.github.io/chas-u03-hangman/assets/graphics/stages/#{$i}.svg");
 	}
 }
 
