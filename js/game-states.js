@@ -1,10 +1,10 @@
 // Tuff non-luck!
-const gameOver = (timeout = false) => {
+const gameOver = (hasTimer = false) => {
 
 	disableButtons();
 	changeLayout(
 		'GAME OVER!',
-		`${timeout ?
+		`${hasTimer ?
 			`Time's up!`
 			:
 			`Sorry, no dice.`
@@ -13,11 +13,15 @@ const gameOver = (timeout = false) => {
 	);
 
 	// If timer is active, reset and hide
-	if (timeout) {
+	if (hasTimer) {
 		timer.reset();
 		timerEl.classList.add('hide');
 		timerEl.textContent = '';
 	}
+
+	// Hide in game restart button since
+	// we'll be showing one below result
+	restartEl.classList.add('hide');
 
 	// Set the record straight
 	lettersArray.forEach(letter => {

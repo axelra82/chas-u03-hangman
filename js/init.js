@@ -12,9 +12,10 @@ const timerFile = '/js/timer.js';
 timerScriptEl.src = !isGitHub ? timerFile : `/${myRepo}${timerFile}`;
 document.head.appendChild(timerScriptEl);
 
-// Restart button
-const restartEl = document.querySelector('div#restart button');
-restartEl.addEventListener('click', () => {
+// In game restart button div section
+const restartEl = document.querySelector('div#restart');
+const restartBtnEl = restartEl.querySelector('button');
+restartBtnEl.addEventListener('click', () => {
 	resetGame('inGame');
 });
 
