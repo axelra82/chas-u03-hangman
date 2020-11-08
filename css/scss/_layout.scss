@@ -9,6 +9,10 @@ body {
 	margin: 0 auto;
 }
 
+.hide {
+	display: none;
+}
+
 section#intro-section {
 	text-align: center;
 }
@@ -31,10 +35,6 @@ article#intro-article {
 }
 
 #game {
-	&.hide {
-		display: none;
-	}
-
 	p.win {
 		border: 1px solid $success;
 		border-radius: 0.15rem;
@@ -52,12 +52,6 @@ article#intro-article {
 			100% {
 				transform: translateX(-50%) scale(1);
 			}
-		}
-	}
-
-	#timer {
-		&.hide {
-			display: none;
 		}
 	}
 }
