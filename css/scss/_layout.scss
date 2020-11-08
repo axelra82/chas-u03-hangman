@@ -71,13 +71,6 @@ article#intro-article {
 	}
 }
 
-footer {
-	p:last-child {
-		border-top: 1px solid $cc;
-		padding-top: 1rem;
-	}
-}
-
 #game {
 	#top {
 		text-align: right;
@@ -86,6 +79,7 @@ footer {
 		#current-stage {
 			position: absolute;
 			z-index: -1;
+			top: 0;
 
 			&[class^="player-stage-"] {
 				width: 8rem;
@@ -94,6 +88,7 @@ footer {
 	}
 
 	h2 {
+		font-size: 1rem;
 		background: rgba($white, 0.5);
 		z-index: 1;
 	}
@@ -116,6 +111,13 @@ footer {
 				transform: translateX(-50%) scale(1);
 			}
 		}
+	}
+}
+
+footer {
+	p:last-child {
+		border-top: 1px solid $cc;
+		padding-top: 1rem;
 	}
 }
 
