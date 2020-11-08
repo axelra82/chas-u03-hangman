@@ -71,6 +71,13 @@ article#intro-article {
 	}
 }
 
+footer {
+	p:last-child {
+		border-top: 1px solid $cc;
+		padding-top: 1rem;
+	}
+}
+
 #game {
 	#top {
 		text-align: right;
