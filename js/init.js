@@ -1,3 +1,12 @@
+// Preloading images will produce a better UX
+const preloadImages = () => {
+	for (i = 0; i < 12; i++) {
+		const assets = `/assets/graphics/stages/${i}.svg`;
+		new Image().src = !isGitHub ? `${assets}` : `/${myRepo}${assets}`;
+	}
+}
+preloadImages();
+
 // Init. Intro and game elements
 const introSectionEl = document.querySelector('body section#intro-section');
 const introArticleEl = document.querySelector('body article#intro-article');
