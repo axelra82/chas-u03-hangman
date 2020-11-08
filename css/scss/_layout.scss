@@ -32,7 +32,17 @@ section#intro-section {
 		}
 		#vs {
 			font-size: 2rem;
-			justify-self: center;
+			#vs-v,
+			#vs-s {
+				justify-self: center;
+				display: inline-block;
+			}
+			#vs-v {
+				transform: translate(0.65rem, -0.35rem);
+			}
+			#vs-s {
+				transform: translate(-0.65rem, 0.35rem);
+			}
 		}
 		#player {
 			@include player($width: 100%);
