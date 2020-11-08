@@ -57,8 +57,42 @@ const verify = (button, letter) => {
 			// console.log(`Ooh.. Last chance!`);
 		}
 
+		const lvl2Factor = 2;
 		// Visualize stage
-		currentStage.classList.add(`player-stage-${wrongCount}`);
+		switch (gameLevel) {
+			case 1:
+				currentStage.classList.add(`player-stage-${wrongCount}`);
+				break;
+
+			case 2:
+				switch (wrongCount) {
+					case 1:
+						currentStage.classList.add(`player-stage-${wrongCount}`);
+						break;
+					case 2:
+						currentStage.classList.add(`player-stage-${wrongCount + lvl2Factor}`);
+						break;
+					case 3:
+						currentStage.classList.add(`player-stage-${wrongCount + (lvl2Factor * 2)}`);
+						break;
+					case 4:
+						currentStage.classList.add(`player-stage-${wrongCount + (lvl2Factor * 3)}`);
+						break;
+					case 5:
+						currentStage.classList.add(`player-stage-${wrongCount * (lvl2Factor - 1)}`);
+						break;
+					case 6:
+						currentStage.classList.add(`player-stage-${wrongCount * lvl2Factor}`);
+						break;
+
+					default:
+						break;
+				}
+				break;
+
+			default:
+				break;
+		}
 	}
 
 	// At this point we can correct remining guess(es)
