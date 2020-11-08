@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+	position: relative;
 	padding: 2rem 1rem;
 	margin: 0 auto;
 }
@@ -71,13 +72,6 @@ article#intro-article {
 	}
 }
 
-footer {
-	p:last-child {
-		border-top: 1px solid $cc;
-		padding-top: 1rem;
-	}
-}
-
 #game {
 	#top {
 		text-align: right;
@@ -86,6 +80,7 @@ footer {
 		#current-stage {
 			position: absolute;
 			z-index: -1;
+			top: 0;
 
 			&[class^="player-stage-"] {
 				width: 8rem;
@@ -94,7 +89,7 @@ footer {
 	}
 
 	h2 {
-		background: rgba($white, 0.5);
+		font-size: 1rem;
 		z-index: 1;
 	}
 
@@ -116,6 +111,48 @@ footer {
 				transform: translateX(-50%) scale(1);
 			}
 		}
+	}
+
+	#final-state {
+		&.show {
+			background: rgba($white, 0.5);
+
+			h2 {
+				@extend .text-center;
+				@extend .pt-2;
+				@extend .h2;
+			}
+		}
+	}
+
+	#final-state-graphic {
+		&.win,
+		&.lose {
+			position: absolute;
+			z-index: -1;
+		}
+
+		&.win {
+			top: 2rem;
+			left: -4rem;
+			@include player(14rem);
+		}
+
+		&.lose {
+			top: 0;
+			left: -6rem;
+			width: 18rem;
+			@extend .player-stage-12;
+			filter: grayscale(0.75) blur(0.075rem);
+			opacity: 0.85;
+		}
+	}
+}
+
+footer {
+	p:last-child {
+		border-top: 1px solid $cc;
+		padding-top: 1rem;
 	}
 }
 
@@ -148,6 +185,21 @@ footer {
 		div.container {
 			margin: 0 auto 2rem auto;
 			padding: 2rem;
+		}
+	}
+
+	#game {
+		#final-state-graphic {
+			&.win {
+				top: -1rem;
+				left: -1rem;
+				@include player(17rem);
+			}
+			&.lose {
+				top: 0;
+				left: 3rem;
+				width: 16rem;
+			}
 		}
 	}
 }

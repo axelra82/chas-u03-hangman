@@ -1,5 +1,5 @@
 // Tuff non-luck!
-const gameOver = () => {
+const gameOver = (timeUp = false) => {
 
 	// Set the record straight
 	lettersArray.forEach(letter => {
@@ -8,7 +8,7 @@ const gameOver = () => {
 
 	changeLayout(
 		'GAME OVER!',
-		`${hasTimer ?
+		`${timeUp ?
 			`Time's up!`
 			:
 			`Sorry, no dice.`
@@ -27,13 +27,22 @@ const playerWins = () => {
 }
 
 const changeLayout = (header, message, state) => {
+
+	// This is how it all ended
+	const finalStateGraphicEl = document.createElement('div');
+	finalStateGraphicEl.id = 'final-state-graphic';
+	finalStateGraphicEl.classList.add(state);
+	gameEl.appendChild(finalStateGraphicEl);
+
 	// Scroll to top of in game session view so player can se what's
 	// going on. Extra important for smaller screens, but nice either way
 	gameEl.scrollIntoView({
 		behavior: 'smooth'
 	});
 
+	// Buttons serve no purpose anymore
 	disableButtons();
+
 	// If timer is active, reset and hide
 	if (hasTimer) {
 		timer.reset();
@@ -44,9 +53,9 @@ const changeLayout = (header, message, state) => {
 	// Hide in game top since game is over
 	gameTopEl.classList.add('hide');
 
-	const gameHeader = gameEl.querySelector('h2');
-	gameHeader.classList.add('text-center');
-	gameHeader.classList.add('mt-2');
+	const finalStateEl = gameEl.querySelector('#final-state');
+	const gameHeader = finalStateEl.querySelector('h2');
+	finalStateEl.classList.add('show');
 	gameHeader.innerHTML = header;
 
 	const gameParagraph = document.createElement('p');

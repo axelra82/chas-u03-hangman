@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Axel Roussille Åberg">
-	<title>Chas Academy - Hangman</title>
+	<title>Chas Academy - Hangman assignment</title>
 	<script>
 		// This script helps us with github pages reference problem
 
@@ -127,15 +127,17 @@
 			<button><span class="restart-icon"></span> restart game</button>
 		</div>
 
-		<!-- Some useful player feedback -->
-		<h2>
-			You have <span class="guesses-left"></span> <span class="sing-plur">inches</span> of rope left
-		</h2>
+		<div id="final-state">
+			<!-- Some useful player feedback -->
+			<h2>
+				You have <span class="guesses-left"></span> <span class="sing-plur">inches</span> of rope left
+			</h2>
 
-		<!-- Game elements -->
-		<div id="timer" class="mb-2 text-light text-small"></div>
-		<ul id="secretWord" class="mb-2"></ul>
-		<ul id="letterButtons"></ul>
+			<!-- Game elements -->
+			<div id="timer" class="mb-2 text-light text-small hide"></div>
+			<ul id="secretWord" class="mb-2"></ul>
+			<ul id="letterButtons"></ul>
+		</div>
 	</section>
 
 	<!-- Footer with credits and nonsense notice -->

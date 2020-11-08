@@ -41,7 +41,11 @@ difficultyEls.forEach(button => {
 			timer = new Timer(2);
 			timer.start();
 
+			// Set global timer check to true
 			hasTimer = true;
+
+			// Wake the dragon
+			timerEl.classList.remove('hide');
 		}
 
 		// Create script elements
