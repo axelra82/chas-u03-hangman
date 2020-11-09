@@ -216,6 +216,10 @@ footer {
 	}
 
 	#game {
+		#time-alerter {
+			top: 50%;
+		}
+
 		#final-state-graphic {
 			&.win {
 				top: 1rem;
