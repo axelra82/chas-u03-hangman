@@ -1,4 +1,4 @@
-// Preloading images will produce a better UX
+// Preloading images will result in better UX
 const preloadImages = () => {
 	for (i = 0; i < 12; i++) {
 		const assets = `/assets/graphics/stages/${i}.svg`;
@@ -7,7 +7,7 @@ const preloadImages = () => {
 }
 preloadImages();
 
-// Init. Intro and game elements
+// Initiate intro and game elements
 const introSectionEl = document.querySelector('body section#intro-section');
 const introArticleEl = document.querySelector('body article#intro-article');
 const gameEl = document.querySelector('body section#game');
@@ -24,27 +24,28 @@ document.head.appendChild(timerScriptEl);
 // In game top section
 const gameTopEl = document.querySelector('div#top');
 
-// Current stage graphic
+// Current stage graphic element
 const currentStage = gameTopEl.querySelector('#current-stage');
 
-// Listen for restart request
-const restartBtnEl = gameTopEl.querySelector('button');
-restartBtnEl.addEventListener('click', () => {
-	resetGame('inGame');
-});
-
-// Let's go
+// Some global variables
 let gameLevel = null;
 let hasTimer = false;
 let timer;
 
+// Loop all difficulty level buttons
 const difficultyEls = introSectionEl.querySelectorAll('ul#difficulty li button');
 difficultyEls.forEach(button => {
+
+	// Wait and see what the player chooses
 	button.addEventListener('click', () => {
+
+		// Initial character graphic
 		currentStage.classList.add('player-stage-0');
 
+		// Get string value from button and turn it to integer number
 		gameLevel = parseInt(button.value);
 
+		// Someone wants to play tough
 		if (gameLevel === 3) {
 			// Instantiate timer with two minutes
 			timer = new Timer(2);
@@ -57,7 +58,10 @@ difficultyEls.forEach(button => {
 			timerEl.classList.remove('hide');
 		}
 
-		// Create script elements
+		// Create script elements once the player has selected a difficulty
+		// It's only at this point that we can load everything in the following scripts
+		// Since they rely on data from this file that is available to us only once
+		// the player has selected difficulty level
 		const wordsScriptEl = document.createElement('script');
 		const alphaScriptEl = document.createElement('script');
 		const eventsScriptEl = document.createElement('script');
@@ -85,8 +89,10 @@ difficultyEls.forEach(button => {
 		document.body.appendChild(verifyScriptEl);
 		document.body.appendChild(statesScriptEl);
 
+		// Let the games begin
 		gameEl.classList.remove('hide');
 
+		// These sections have done their part
 		introSectionEl.remove();
 		introArticleEl.remove();
 	});

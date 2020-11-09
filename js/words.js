@@ -1,3 +1,9 @@
+// Listen for restart request
+const restartBtnEl = gameTopEl.querySelector('button');
+restartBtnEl.addEventListener('click', () => {
+	resetGame('inGame');
+});
+
 // Allowed guesses
 let maxClick = 0;
 
@@ -38,7 +44,6 @@ switch (gameLevel) {
 }
 // Make lists usable
 wordArray = binArr(wordArray);
-
 
 // Show initial guess count
 const inGameHeadingEl = gameEl.querySelector('h2');
