@@ -92,6 +92,10 @@ article#intro-article {
 	}
 
 	#time-alerter {
+		// pointer-events will make the element act like a "ghost"
+		// visible but not selectable. We need this, otherwise the
+		// player can't click the letter buttons while count down is showing
+		pointer-events: none;
 		position: absolute;
 		top: 25%;
 		left: 50%;
